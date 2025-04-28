@@ -167,6 +167,7 @@
 <nav>
   <a href="#services">Services</a>
   <a href="#contact">Contact</a>
+  <a href="#About us">About us</a>
 </nav>
 
 <section class="services" id="services">
@@ -329,7 +330,7 @@
 </section>
 
 <section class="contact" id="contact">
-  <h2>Contact Us</h2>
+  <h2>Contact us</h2>
   <p><strong>K. Mallikarjun Reddy</strong></p>
   <p>Cell: <a href="tel:+917386396460">7386396460</a> | <a href="tel:+918464842260">8464842260</a> | <a href="tel:+917386525715">7386525715</a></p>
   <p>Email: 
@@ -344,6 +345,16 @@
   </div>
 </section>
 
+
+<section class="About us" id="About us">
+  
+  <h2>About us</h2>At Transparent Tax & Legals, we are a dedicated team of finance professionals committed to delivering reliable, accurate, and compliant financial solutions for businesses of all sizes. With a strong focus on integrity and precision, we specialize in tax planning and filing, accounting and bookkeeping, payroll management, GST compliance, TDS returns, and all forms of regulatory filings under the Ministry of Corporate Affairs (MCA).
+
+  Our mission is to simplify complex financial and regulatory processes so that our clients can focus on growing their businesses. We work closely with startups, SMEs, and established companies to ensure timely compliance and strategic financial planning, helping them stay ahead in an ever-evolving business environment.
+  
+  Whether you’re launching a new venture, looking to streamline your accounting systems, or need expert support on corporate compliance matters, our experienced professionals are here to support you every step of the way.
+  </section>
+
 <footer>
   <p>&copy; 2025 Transparent Tax & Legals. All rights reserved.</p>
 </footer>
@@ -351,13 +362,19 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   const serviceToggles = document.querySelectorAll('.service-toggle');
+  const serviceDetails = document.querySelectorAll('.service-details');
+
+  // Initially hide all service details
+  serviceDetails.forEach(detail => {
+    detail.style.display = 'none';
+  });
+
   serviceToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
-      console.log('Service toggle clicked!');
       const service = toggle.dataset.service;
       const details = document.getElementById(`service-details-${service}`);
 
-      if (details.style.display === 'none') {
+      if (details.style.display === 'none' || details.style.display === '') {
         details.style.display = 'block';
         toggle.textContent = '-'; // Change + to -
       } else {
@@ -367,6 +384,7 @@
     });
   });
 });
+</script>
 </script>
 
 </body>
