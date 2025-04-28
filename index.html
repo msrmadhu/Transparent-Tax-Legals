@@ -150,6 +150,63 @@
   margin-left: 0.5em;
   line-height: 0;
 }
+
+/* Media Query for Mobile Devices (example: screens up to 768px wide) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack logo and text vertically */
+    text-align: center; /* Center text below logo */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .logo-container {
+    width: 15em; /* Smaller logo container */
+    height: 12.1875em; /* Maintain aspect ratio */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add space below logo */
+    background-size: 28em 12em; /* Adjust background line density */
+  }
+
+  .logo {
+    width: 17em; /* Smaller logo */
+    height: 16em;
+    transform: translate(0,-1em); /* Adjust position */
+  }
+
+  header > div {
+    flex-grow: 1; /* Allow text to take full width */
+  }
+
+  header h1 {
+    font-size: 1.5em; /* Smaller heading */
+    margin-bottom: 5px;
+  }
+
+  header p {
+    font-size: 0.9em; /* Smaller paragraph text */
+  }
+
+  nav a {
+    font-size: 16px; /* Slightly smaller navigation links */
+    margin: 0 10px;
+  }
+}
+
+/* Further adjustments for even smaller screens if needed */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3em;
+  }
+
+  header p {
+    font-size: 0.8em;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
   </style>
 </head>
 <body>
