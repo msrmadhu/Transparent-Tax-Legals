@@ -25,19 +25,19 @@
       text-align: center;
     }
     .logo-container {
-    width: 23em; /* Same width as the image */
-    height: 18.75em; /* Same height as the image */
+    width: 23em;
+    height: 18.75em;
     margin-right: 20px;
     margin-bottom: 0;
     background-image: linear-gradient(45deg, rgba(247, 239, 239, 0.747) 50%, transparent 10%);
-    background-size: 145% 23em; /* Adjust size for line density */
+    background-size: 145% 23em;
     background-repeat: repeat;
   } 
   .logo {
-  /* display: block; Remove any default inline spacing */
-  width: 25em; /* Make the image fill the container */
-  height: 24em; /* Make the image fill the container */
-  object-fit: contain; /* Preserve aspect ratio within the container */
+  /* display: block;*/
+  width: 25em;
+  height: 24em;
+  object-fit: contain;
   display: flex;
   transform: translate(-1em,-3em);
 }
@@ -117,9 +117,9 @@
     }
 
   .service-item-header {
-  display: flex; /* Use flexbox to align button and text */
-  align-items: center; /* Vertically align items in the center */
-  margin-bottom: 5px; /* Add a little space below the header */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; 
 }
     .service-toggle {
     background: none;
@@ -130,14 +130,14 @@
     color: #000080;
     line-height: 1;
 }
-.service-item-header > span { /* Style the text within the header */
-  flex-grow: 1; /* Allow the text to take up remaining space */
-  font-weight: bold; /* Make the heading text bold */
-  font-size: 20px; /* Keep the heading font size */
+.service-item-header > span {
+  flex-grow: 1;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .service-details {
-    display: none; /* Initially hide the details */
+    display: none;
     padding: 20px;
     margin-top: 10px;
     border: 1px solid #ccc;
@@ -166,40 +166,40 @@
 /* Media Query for Mobile Devices (example: screens up to 768px wide) */
 @media (max-width: 768px) {
   header {
-    flex-direction: column; /* Stack logo and text vertically */
-    text-align: center; /* Center text below logo */
-    padding: 20px; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
   }
 
   .logo-container {
-    width: 15em; /* Smaller logo container */
-    height: 12.1875em; /* Maintain aspect ratio */
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 10px; /* Add space below logo */
-    background-size: 28em 12em; /* Adjust background line density */
+    width: 15em;
+    height: 12.1875em;
+    margin-right: 0;
+    margin-bottom: 10px;
+    background-size: 28em 12em;
   }
 
   .logo {
-    width: 17em; /* Smaller logo */
+    width: 17em;
     height: 16em;
-    transform: translate(0,-1em); /* Adjust position */
+    transform: translate(0,-1em);
   }
 
   header > div {
-    flex-grow: 1; /* Allow text to take full width */
+    flex-grow: 1;
   }
 
   header h1 {
-    font-size: 1.5em; /* Smaller heading */
+    font-size: 1.5em;
     margin-bottom: 5px;
   }
 
   header p {
-    font-size: 0.9em; /* Smaller paragraph text */
+    font-size: 0.9em;
   }
 
   nav a {
-    font-size: 16px; /* Slightly smaller navigation links */
+    font-size: 16px;
     margin: 0 10px;
   }
 }
@@ -220,23 +220,27 @@
 }
 @media (max-width: 768px) {
   .service-item-header {
-    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
-    margin-bottom: 8px; /* Adjust spacing for wrapped content */
+    /* flex-wrap: wrap; */
+    margin-bottom: 8px; 
   }
 
+  .service-details img {
+  max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+  height: auto;    /* Maintain the image's aspect ratio */
+  margin-bottom: 10px;
+}
   .service-toggle {
-    font-size: 20px; /* Slightly smaller plus icon */
-    padding: 0 8px 0 0; /* Adjust padding */
+    font-size: 20px;
+    padding: 0 8px 0 0;
   }
 
   .service-item-header > span {
-    font-size: 18px; /* Slightly smaller heading text on mobile */
-    flex-basis: 100%; /* Make the text take full width when wrapping */
-    margin-top: 5px; /* Add some top margin to the wrapped text */
+    font-size: 18px;
+    flex-basis: 100%;
+    margin-top: 5px;
   }
 }
 
-/* Further adjustments for even smaller screens if needed */
 @media (max-width: 480px) {
   .service-item-header > span {
     font-size: 16px;
