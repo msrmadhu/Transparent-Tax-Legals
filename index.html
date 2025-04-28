@@ -14,11 +14,37 @@
       color: #333;
     }
     header {
-      background: #0056b3;
-      color: white;
+      display: flex;
+      align-items: center;
+      color: black;
       padding: 30px 20px;
+      /* text-align: center; */
+      background: url('Background.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Times New Roman', Times, serif;
       text-align: center;
     }
+    .logo-container {
+    width: 23em; /* Same width as the image */
+    height: 18.75em; /* Same height as the image */
+    margin-right: 20px;
+    margin-bottom: 0;
+    background-image: linear-gradient(45deg, rgba(247, 239, 239, 0.747) 50%, transparent 10%);
+    background-size: 42em 18em; /* Adjust size for line density */
+    background-repeat: repeat;
+  } 
+  .logo {
+    /* display: block; Remove any default inline spacing */
+    width: 25em; /* Make the image fill the container */
+    height: 24em; /* Make the image fill the container */
+    object-fit: contain; /* Preserve aspect ratio within the container */
+    display: flex;
+    transform: translate(-1em,-3em);
+  }
+  header > div {
+    flex-grow: 0.4;
+    text-align: center;
+  }
     nav {
       background: #e6f0ff;
       padding: 15px 20px;
@@ -53,11 +79,11 @@
       padding-left: 20px;
       position: relative;
     }
-    .services ul li::before {
+    /* .services ul li::before {
       content: '✔️';
       position: absolute;
       left: 0;
-    }
+    } */
     .contact p {
       font-size: 18px;
       margin: 10px 0;
@@ -78,7 +104,9 @@
       display: inline-block;
     }
     .btn:hover {
-      background: #003d80;
+      /* background: url('Background.png') no-repeat center center fixed; */
+      background-size: cover;
+      font-family: 'Times New Roman', Times, serif;
     }
     footer {
       background: #003d80;
@@ -87,23 +115,53 @@
       padding: 20px;
       margin-top: 40px;
     }
-    img.logo {
-      width: 300px;
-      height: 200px;
-      margin-bottom: 10px;
-      background: none;
-    }
-    .logo-container{
-      background: none;
-    }
+    .service-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #0056b3;
+}
+
+.service-details {
+    display: none; /* Initially hide the details */
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.service-details h3 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+.service-details img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.service-details-dots  p::before {
+  content: '• ';
+  display: inline-block;
+  font-size: 1.5em;
+  width: 1em;
+  margin-left: 0.5em;
+  line-height: 0;
+}
   </style>
 </head>
 <body>
 
 <header>
+  <div class="logo-container">
   <img src="TransparentTax.png" class="logo">
+  </div>
+  <div>
   <h1>Transparent Tax & Legals</h1>
-  <p>Accounting | IT Returns | GST Registration & Filings | Company & LLP Registrations</p>
+  <p style="margin-top: 5px;">Accounting | IT Returns | GST Registration & Filings | Company & LLP Registrations</p>
+</div>
 </header>
 
 <nav>
@@ -114,14 +172,159 @@
 <section class="services" id="services">
   <h2>Our Services</h2>
   <ul>
-    <li>Income Tax Returns Filing</li>
-    <li>Accounting, Books Closing, Financials & Finalization</li>
-    <li>GST Registration, Returns and Reconciliation</li>
-    <li>Company, LLP, Firm, Trust, Society Registration</li>
-    <li>Payroll, TDS, PF, PT, ESI, IEC, LUT File</li>
-    <li>MSME/Udyam Registration, Food Licence</li>
-    <li>PAN, TAN, DIN, DSC, Labour Licence</li>
-    <li>ROC Filing</li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="tax-filing">+</button>
+              Income Tax Returns Filing
+          </div>
+          <div class="service-details" id="service-details-tax-filing">
+              <h3>Income Tax Returns Filing</h3>
+              <img src="Income.jpg" alt="Income Tax Returns Filing"></img>
+              <p>We offer expert assistance in filing your Income Tax Returns with complete transparency and accuracy. Our services cover various income sources, including:</p>
+              <div class="service-details-dots">
+              <p>Salary Income</p>                
+              <p>House Property Income</p>                
+              <p> Capital Gains Income</p>                
+              <p>Business Income</p>
+              </div>                
+              <p>Get personalized tax solutions designed to maximize your benefits and ensure compliance with all legal requirements.
+                Contact us today at <a href="tel:+917386396460">+91 7386396460</a> for smooth and hassle-free filing.</p>
+          </div>
+      </li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="accounting">+</button>
+              Accounting, Books Closing, Financials & Finalization
+          </div>
+          <div class="service-details" id="service-details-accounting">
+              <h3>Accounting, Books Closing, Financials & Finalization</h3>
+              <img src="Accounting.jpg" alt="Accounting Services">
+              <p>Streamline your business finances with our expert accounting solutions. We offer end-to-end services, including:</p>
+              <div class="service-details-dots">
+              <p>Recording of Sales, Purchases, and Bank Transactions</p>
+              <p>Complete Accounting and Bookkeeping</p>                
+              <p>Audit Support and Compliance Assistance</p>                
+              <p>Finalisation of Accounts</p>                
+              <p>Preparation of Financial Statements</p>
+              </div>                
+              <p>Our team ensures accuracy, transparency, and compliance at every step.
+                Contact us at <a href="tel:+917386396460">+91 7386396460</a> for reliable and professional accounting services.</p>
+          </div>
+      </li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="gst">+</button>
+              GST Registration, Returns and Reconciliation
+          </div>
+          <div class="service-details" id="service-details-gst">
+              <h3>GST Registration, Returns and Reconciliation</h3>
+              <img src="GST.jpg" alt="GST Services">
+              <p>Simplify your GST compliance with our expert services. We assist businesses in managing all GST requirements, including:</p>
+              <div class="service-details-dots">
+                <p> GST Registration</p>
+                <p>GSTR-1 and GSTR-3B Filing</p>
+                <p>GST Reconciliation</p>
+                <p>Input Tax Credit (ITC) Reconciliation</p>
+                <p>Import Export Code (IEC) and LUT Applications</p>
+              </div>                
+                <p>Our experienced team ensures accurate filings, timely submissions, and full regulatory compliance.
+                Contact us today at <a href="tel:+917386396460">+91 7386396460</a> for seamless GST support.</p>
+          </div>
+      </li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="company-reg">+</button>
+              Company, LLP, Firm, Trust, Society Registration
+          </div>
+          <div class="service-details" id="service-details-company-reg">
+              <h3>Company, LLP, Firm, Trust, Society Registration</h3>
+              <img src="Company.jpg" alt="Company Registration Services">
+              <p>Start your business journey with our hassle-free registration services. We assist with:</p>
+              <div class="service-details-dots">
+                <p>Company Incorporation</p>
+                <p>LLP (Limited Liability Partnership) Registration</p>
+                <p>Firm Registration</p>
+                <p>Society Registration</p>
+                <p>Section 8 (Non-Profit) Company Registration</p>
+                <p>OPC (One Person Company) Registration</p>
+                <p>Darpan ID Registration</p>
+              </div>                
+              <p>We ensure smooth documentation, faster approvals, and full legal compliance for your entity.
+                Contact us at <a href="tel:+917386396460">+91 7386396460</a> to get started today!</p>
+          </div>
+      </li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="payroll">+</button>
+              Payroll, TDS, PF, PT, ESI, IEC, LUT File
+          </div>
+          <div class="service-details" id="service-details-payroll">
+              <h3>Payroll, TDS, PF, PT, ESI, IEC, LUT File</h3>
+              <img src="Payroll.jpg" alt="payroll Services">
+              <p>Take the pressure off payroll management with our professional services. We offer:</p>
+              <div class="service-details-dots">
+                <p>Accurate Payroll Processing</p>                
+                <p>PF, PT, and ESI Payment & Filings</p>
+                <p>TDS Payment and Quarterly Returns</p>
+                <p>Issuing Payslips and Form 16</p>
+              </div>
+                <p>Stay compliant and keep your employees happy with timely and error-free payroll services.
+                Contact us at <a href="tel:+917386396460">+91 7386396460</a> for reliable and transparent support!</p>
+          </div>
+      </li>
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="msme">+</button>
+              MSME/Udyam Registration, Food License, Labour License
+          </div>
+          <div class="service-details" id="service-details-msme">
+              <h3>MSME/Udyam Registration, Food License</h3>
+              <img src="Licenses.jpg" alt="MSME Services">
+              <p>Get your business fully compliant with essential licenses:</p>
+              <div class="service-details-dots">
+                <p>Food License (FSSAI)</p>
+                <p>Labour License</p>
+                <p>Trade License</p>
+                <p>UDYAM (MSME) Registration</p>
+                </div>
+                <p>We simplify the licensing process so you can focus on growing your business.
+                Contact us today at <a href="tel:+917386396460">+91 7386396460</a> for smooth and hassle-free licensing support!</p>
+          </div>
+      </li>
+      <!-- <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="pan-tan">+</button>
+              PAN, TAN, DIN, DSC, Labour Licence
+          </div>
+          <div class="service-details" id="service-details-pan-tan">
+              <h3>PAN, TAN, DIN, DSC, Labour Licence</h3>
+              <img src="pan-tan.jpg" alt="PAN Services">
+              <p>We handle all the registration process of PAN, TAN, DIN, DSC, Labour Licence for smooth compliance...</p>
+          </div>
+      </li> -->
+      <li class="service-item">
+          <div class="service-item-header">
+              <button class="service-toggle" data-service="roc-filing">+</button>
+              ROC Filing, DIN, DSC
+          </div>
+          <div class="service-details" id="service-details-roc-filing">
+              <h3>ROC Filing</h3>
+              <img src="ROC.jpg" alt="ROC Filing Services">
+              <p>Stay compliant and up-to-date with all your ROC (Registrar of Companies) requirements:</p>
+              <div class="service-details-dots">
+                <p>Filing of AOC-4 and MGT-7</p>
+                <p>Filing of LLP Forms 8 and 11</p>
+                <p>DSC (Digital Signature Certificate) Allotment</p>
+                <p>DIN (Director Identification Number) Related Services</p>
+                <p>Food License (FSSAI)</p>
+                <p>Labour License</p>
+                <p>Trade License</p>
+                <p>UDYAM (MSME) Registration</p>
+              </div>
+                <p>Avoid late fees and penalties — trust the experts to handle your filings accurately and on time.
+                Contact us today at <a href="tel:+917386396460">+91 7386396460</a> for professional ROC support!</p>
+          </div>
+      </li>
   </ul>
 </section>
 
@@ -144,6 +347,27 @@
 <footer>
   <p>&copy; 2025 Transparent Tax & Legals. All rights reserved.</p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const serviceToggles = document.querySelectorAll('.service-toggle');
+  serviceToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      console.log('Service toggle clicked!');
+      const service = toggle.dataset.service;
+      const details = document.getElementById(`service-details-${service}`);
+
+      if (details.style.display === 'none') {
+        details.style.display = 'block';
+        toggle.textContent = '-'; // Change + to -
+      } else {
+        details.style.display = 'none';
+        toggle.textContent = '+'; // Change - to +
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>
