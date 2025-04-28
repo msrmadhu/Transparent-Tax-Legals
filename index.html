@@ -30,17 +30,17 @@
     margin-right: 20px;
     margin-bottom: 0;
     background-image: linear-gradient(45deg, rgba(247, 239, 239, 0.747) 50%, transparent 10%);
-    background-size: 42em 18em; /* Adjust size for line density */
+    background-size: 145% 23em; /* Adjust size for line density */
     background-repeat: repeat;
   } 
   .logo {
-    /* display: block; Remove any default inline spacing */
-    width: 25em; /* Make the image fill the container */
-    height: 24em; /* Make the image fill the container */
-    object-fit: contain; /* Preserve aspect ratio within the container */
-    display: flex;
-    transform: translate(-1em,-3em);
-  }
+  /* display: block; Remove any default inline spacing */
+  width: 25em; /* Make the image fill the container */
+  height: 24em; /* Make the image fill the container */
+  object-fit: contain; /* Preserve aspect ratio within the container */
+  display: flex;
+  transform: translate(-1em,-3em);
+}
   header > div {
     flex-grow: 0.4;
     text-align: center;
@@ -92,7 +92,7 @@
       margin-top: 20px;
     }
     .btn {
-      background: #0056b3;
+      background: #000080;
       color: white;
       padding: 12px 20px;
       margin: 10px 10px 0 0;
@@ -109,19 +109,31 @@
       font-family: 'Times New Roman', Times, serif;
     }
     footer {
-      background: #003d80;
+      background: #000080;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
+
+  .service-item-header {
+  display: flex; /* Use flexbox to align button and text */
+  align-items: center; /* Vertically align items in the center */
+  margin-bottom: 5px; /* Add a little space below the header */
+}
     .service-toggle {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    padding: 0 10px;
-    color: #0056b3;
+    padding: 0 10px 0 0;
+    color: #000080;
+    line-height: 1;
+}
+.service-item-header > span { /* Style the text within the header */
+  flex-grow: 1; /* Allow the text to take up remaining space */
+  font-weight: bold; /* Make the heading text bold */
+  font-size: 20px; /* Keep the heading font size */
 }
 
 .service-details {
@@ -133,7 +145,7 @@
 }
 
 .service-details h3 {
-    color: #0056b3;
+    color: #000080;
     margin-top: 0;
 }
 
@@ -206,6 +218,34 @@
     font-size: 14px;
   }
 }
+@media (max-width: 768px) {
+  .service-item-header {
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    margin-bottom: 8px; /* Adjust spacing for wrapped content */
+  }
+
+  .service-toggle {
+    font-size: 20px; /* Slightly smaller plus icon */
+    padding: 0 8px 0 0; /* Adjust padding */
+  }
+
+  .service-item-header > span {
+    font-size: 18px; /* Slightly smaller heading text on mobile */
+    flex-basis: 100%; /* Make the text take full width when wrapping */
+    margin-top: 5px; /* Add some top margin to the wrapped text */
+  }
+}
+
+/* Further adjustments for even smaller screens if needed */
+@media (max-width: 480px) {
+  .service-item-header > span {
+    font-size: 16px;
+  }
+
+  .service-toggle {
+    font-size: 18px;
+  }
+}
 
   </style>
 </head>
@@ -222,10 +262,15 @@
 </header>
 
 <nav>
+  <a href="#About us">About us</a>
   <a href="#services">Services</a>
   <a href="#contact">Contact</a>
-  <a href="#About us">About us</a>
 </nav>
+
+<section class="About us" id="About us">
+  
+  <h2>About us</h2>At Transparent Tax & Legals, we are a dedicated team of finance professionals committed to delivering reliable, accurate, and compliant financial solutions for businesses of all sizes. With a strong focus on integrity and precision, we specialize in tax planning and filing, accounting and bookkeeping, payroll management, GST compliance, TDS returns, and all forms of regulatory filings under the Ministry of Corporate Affairs (MCA). Whether you’re launching a new venture, looking to streamline your accounting systems, or need expert support on corporate compliance matters, our experienced professionals are here to support you every step of the way.
+  </section>
 
 <section class="services" id="services">
   <h2>Our Services</h2>
@@ -401,16 +446,6 @@
     <a href="tel:+917386396460" class="btn">Call Now</a>
   </div>
 </section>
-
-
-<section class="About us" id="About us">
-  
-  <h2>About us</h2>At Transparent Tax & Legals, we are a dedicated team of finance professionals committed to delivering reliable, accurate, and compliant financial solutions for businesses of all sizes. With a strong focus on integrity and precision, we specialize in tax planning and filing, accounting and bookkeeping, payroll management, GST compliance, TDS returns, and all forms of regulatory filings under the Ministry of Corporate Affairs (MCA).
-
-  Our mission is to simplify complex financial and regulatory processes so that our clients can focus on growing their businesses. We work closely with startups, SMEs, and established companies to ensure timely compliance and strategic financial planning, helping them stay ahead in an ever-evolving business environment.
-  
-  Whether you’re launching a new venture, looking to streamline your accounting systems, or need expert support on corporate compliance matters, our experienced professionals are here to support you every step of the way.
-  </section>
 
 <footer>
   <p>&copy; 2025 Transparent Tax & Legals. All rights reserved.</p>
